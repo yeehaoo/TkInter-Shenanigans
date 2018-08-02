@@ -6,6 +6,8 @@ def printSomething():
 
 root = tk.Tk()
 
+# ***** Main Menu *****
+
 menuBar = tk.Menu(root)
 root.config(menu=menuBar)
 
@@ -20,4 +22,14 @@ ddl_2 = tk.Menu(menuBar)
 menuBar.add_cascade(label="Edit", menu=ddl_2)
 ddl_2.add_command(label="Redo", command=printSomething)
 
+# ***** Toolbar *****
+
+toolbar = tk.Frame(root, bg="blue")
+
+insert = tk.Button(toolbar, text="Insert Image", command=printSomething)
+insert.pack(side=tk.LEFT, padx=2, pady=5)
+printButton = tk.Button(toolbar, text="Print", command=printSomething)
+printButton.pack(side=tk.LEFT, padx=2, pady=5)
+
+toolbar.pack(side=tk.TOP, fill=tk.X)
 root.mainloop()
